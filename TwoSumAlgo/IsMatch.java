@@ -2,9 +2,11 @@ public class IsMatch {
 
     public boolean isMatch (int [] arr, int x) {
         for(int i = 0; i<arr.length; i++) {
-            for(int k = 1; i+k < arr.length; k++) {
-                if (arr[i] + arr[i+k] == x) {
-                    return true;
+            for(int k = i+1; k < arr.length; k++) {
+                for(int n = k+1; n < arr.length; n++){
+                    if (arr[i] + arr[k] + arr[n] == x) {
+                        return true;
+                    }
                 }
             }
         }
@@ -17,4 +19,8 @@ public class IsMatch {
         Boolean result = y.isMatch(arr, 9);
         System.out.println(result);
     }
+
+
+
+
 }
